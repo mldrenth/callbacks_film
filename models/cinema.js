@@ -34,4 +34,9 @@ Cinema.prototype.calculateRunningTime = function (){
   return runningTime;
 }
 
+Cinema.prototype.filmsByProperty = function (searchTerm, value){
+  const filteredFilms = this.films.filter(film => film[searchTerm] === value)
+  return filteredFilms
+}
+
 module.exports = Cinema;

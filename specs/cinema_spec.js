@@ -56,5 +56,9 @@ describe('Cinema', function () {
     const actual = cinema.calculateRunningTime();
     assert.deepStrictEqual(actual, 622)
   });
+  it('should be able to filter films by year', function(){
+    const actual = cinema.filmsByProperty('year', 2018);
+    assert.deepStrictEqual(actual, [blackPanther])
+  });
 
 });
