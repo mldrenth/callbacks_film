@@ -12,4 +12,14 @@ Cinema.prototype.findByTitle = function (title) {
   return filmObject;
 }
 
+Cinema.prototype.filterByGenre = function (genre) {
+  const filmObjects = this.films.filter(film => film.genre === genre);
+  return filmObjects
+}
+
+Cinema.prototype.checkForYear = function (year) {
+  const filmObjects = this.films.some(film => film.year === year);
+  return filmObjects
+}
+
 module.exports = Cinema;
