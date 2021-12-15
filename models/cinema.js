@@ -22,4 +22,16 @@ Cinema.prototype.checkForYear = function (year) {
   return filmObjects
 }
 
+Cinema.prototype.checkForLength = function (length) {
+  const lengthCondition = this.films.every(film => film.length >= length);
+  return lengthCondition;
+}
+
+Cinema.prototype.calculateRunningTime = function (){
+  const runningTime = this.films.reduce((runningTotal, film) => {
+    return runningTotal + film.length;
+  }, 0)
+  return runningTime;
+}
+
 module.exports = Cinema;
